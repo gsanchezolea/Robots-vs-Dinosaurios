@@ -9,22 +9,31 @@ namespace Robots_vs_Dinosaurs
     class Robot
     {
         //member variable
-        public string name;
-        public double health;
-        public double powerLevel;
-        public double attackPower;
-        public string weapon;
+        public string robotName;
+        public double robotHealth;
+        public double robotPowerLevel;
+        public Weapon weapon;      
 
         //constructor
-        public Robot(string newName)
+        public Robot(string newName, double newHealth, double newPowerLevel, Weapon newWeapon)
         {
-            name = newName;
-            health = 100; //out of 100
-            powerLevel = 50; //out of 50
-            attackPower = 2000;
-            weapon = null;
+            robotName = newName;
+            robotHealth = newHealth;
+            robotPowerLevel = newPowerLevel;
+            weapon = newWeapon;
         }
         //member method
+
+        //public double robotAttack()
+        public double RobotAttack()
+        {
+            double randomizedNumber;
+            Random random = new Random();
+            randomizedNumber = random.Next(0, 6);
+
+            return randomizedNumber * robotPowerLevel * Convert.ToDouble(weapon);
+        }
+
 
     }
 }

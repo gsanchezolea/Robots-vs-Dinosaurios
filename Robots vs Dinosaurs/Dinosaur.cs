@@ -9,21 +9,40 @@ namespace Robots_vs_Dinosaurs
     class Dinosaur
     {
         //member variable
-        public string type; //types of dinosaurs include the following: Tyrannosaurus, Allosaurus, Triceratops, Stegosaurus, & Ankylosaurus
-        public double health;
-        public double energy;
-        public double attackPower;
+        public string dinorType; //types of dinosaurs include the following: Tyrannosaurus, Allosaurus, Triceratops, Stegosaurus, & Ankylosaurus
+        public double dinoHealth;
+        public double dinoEnergy;
+        public double dinoAttackPower;
+
+
+        //public double attackMove;
+
 
         //constructor
-        public Dinosaur()
+        public Dinosaur(string newDinoType, double newHealth, double newEnergy, double newAttackPower)
         {
-            type = null;
-            health = 80; //out of 100
-            energy = 40; //out of 50
-            attackPower = 1500; //out of 2000
+            dinorType = newDinoType;
+            dinoHealth = newHealth;
+            dinoEnergy = newEnergy;
+            dinoAttackPower = newAttackPower;
+
+            //attackMove = newAttackMove;
+        }
+        //member method        
+        public double DinoAttack()
+        {
+            double randomizedNumber;
+            Random random = new Random();
+            randomizedNumber = random.Next(0, 6);
+
+            return randomizedNumber * dinoEnergy * dinoAttackPower;
         }
 
-
-        //member method
+        //public double HealthLoss()
+        //{
+        //    double result;
+            
+        //}
+        
     }
 }
