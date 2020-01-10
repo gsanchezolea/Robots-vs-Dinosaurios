@@ -9,18 +9,17 @@ namespace Robots_vs_Dinosaurs
     class Program
     {
 
-        Robot r2d2 = new Robot("R2D2");
-        Robot rc3po = new Robot("C3PO");
-        Robot megaMan = new Robot("Mega-Man");
-
-        List<string> Robots = new List<string>();
-        
+        Robot robotOne = new Robot("R2D2");
+        Robot robotTwo = new Robot("C3PO");
+        Robot robotThree = new Robot("Mega-Man");       
 
         Dinosaur tyrannosaurus = new Dinosaur();
         Dinosaur allosaurus = new Dinosaur();
         Dinosaur triceratops = new Dinosaur();
 
-        List<string> robots = 
+       
+
+        
 
 
 

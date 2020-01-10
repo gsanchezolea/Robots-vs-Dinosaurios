@@ -10,9 +10,20 @@ namespace Robots_vs_Dinosaurs
     {
         //member variable
 
+        
+        
+            
+        
+            
 
 
+        
         //constructor
+        public Fleet()
+        {
+            List<string> robotList = new List<string>();
+            robotList.Insert()
+        }
 
 
 
