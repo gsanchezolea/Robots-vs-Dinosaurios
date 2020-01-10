@@ -10,7 +10,7 @@ namespace Robots_vs_Dinosaurs
     {
         //member variable
         //Instatiated List
-        List<Dinosaur> ListOfDinosaurs = new List<Dinosaur>();         
+        public List<Dinosaur> ListOfDinosaurs = new List<Dinosaur>();         
         
 
         //constructor
@@ -18,9 +18,9 @@ namespace Robots_vs_Dinosaurs
         {
             //Instatiated Objects
             //Data Type - Object - Constructor - (Dino Type, Max Val 100, Max Value 100, Max Val 10
-            Dinosaur dinoOne = new Dinosaur("T-Rex", 100, 90, 10);
-            Dinosaur dinoTwo = new Dinosaur("Spinosaurus", 90, 95, 8);
-            Dinosaur dinoThree = new Dinosaur("Triceratops", 70, 75, 7);
+            Dinosaur dinoOne = new Dinosaur("T-Rex", 10000, 90, 10);
+            Dinosaur dinoTwo = new Dinosaur("Spinosaurus", 10000, 95, 8);
+            Dinosaur dinoThree = new Dinosaur("Triceratops", 10000, 75, 7);
 
             //Adding Objects to List 
             ListOfDinosaurs.Add(dinoOne);

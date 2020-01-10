@@ -12,58 +12,109 @@ namespace Robots_vs_Dinosaurs
         Herd herd;
 
         
+
+
         public Battlefield()
         {
-          
-            fleet = 
+            fleet = new Fleet();
+            herd = new Herd();
+            
+
         }
         //member method
-
-        
-         public void SelectRobot()
+        public void SelectRobot()
 
 
         {
-            Console.WriteLine("Welcome to Robots vs Dinosaurs");
-            Console.WriteLine("In this game you will play as a Robot");
-            Console.WriteLine("Please select a Robot");
+
+            Console.WriteLine("Please select a Robot to Attack " + herd.ListOfDinosaurs[0].dinoType + " with.");
             Console.WriteLine("1) C3PO, 2) R2D2, 3) T-1000");
             string character = Console.ReadLine();
 
             switch (character)
             {
+
                 case "C3PO":
-                    //" ";
-                    Console.WriteLine("You have selected: " + character);
+                    Console.WriteLine("You have selected: " + fleet.ListOfRobots[0].robotName);                   
+                    herd.ListOfDinosaurs[0].dinoHealth -= fleet.ListOfRobots[0].RobotAttack();
+                    
                     break;
 
-                case "R2D2":
-                    //" ";
-                    Console.WriteLine("You have selected: " + character);
+                case "R2D2":                  
+                    Console.WriteLine("You have selected: " + fleet.ListOfRobots[1].robotName);
+                    herd.ListOfDinosaurs[0].dinoHealth -= fleet.ListOfRobots[1].RobotAttack();
                     break;
 
-                case "T-1000":
-                    //" ";
-                    Console.WriteLine("You have selected: " + character);
+                case "T-1000":                    
+                    Console.WriteLine("You have selected: " + fleet.ListOfRobots[2]);
+                    herd.ListOfDinosaurs[0].dinoHealth -= fleet.ListOfRobots[2].RobotAttack();
                     break;
 
                 default:
                     Console.WriteLine("Incorrect character, please try again.");
-                    SelectRobot();                   
+                    SelectRobot();
                     break;
-                    
+
             }
-            Console.ReadLine();
+
+            SelectDino();
+        }
+        public void SelectDino()
+
+
+        {
+
+            Console.WriteLine("Please select a Dinosaur to Attack " + fleet.ListOfRobots[0].robotName + " with.");
+            Console.WriteLine("1) T-Rex, 2) Spinosaurus, 3) Triceratops");
+            string character = Console.ReadLine();
+
+            switch (character)
+            {
+                case "T-Rex":
+                    Console.WriteLine("You have selected: " + herd.ListOfDinosaurs[0].dinoType);
+                    fleet.ListOfRobots[0].robotHealth -= herd.ListOfDinosaurs[0].DinoAttack();
+
+                    
+                    break;
+
+                case "Spinosaurus":
+                    Console.WriteLine("You have selected: " + herd.ListOfDinosaurs[1].dinoType);
+                    fleet.ListOfRobots[0].robotHealth -= herd.ListOfDinosaurs[1].DinoAttack();
+                   
+                    break;
+
+                case "Triceratops":
+                    Console.WriteLine("You have selected: " + herd.ListOfDinosaurs[2].dinoType);
+                    fleet.ListOfRobots[0].robotHealth -= herd.ListOfDinosaurs[2].DinoAttack();
+                    
+                    break;
+
+                default:
+                    Console.WriteLine("Incorrect character, please try again.");
+                    SelectDino();
+                    break;
+            }
+         
         }
 
+        public void RunGame()
+        {
+            Console.WriteLine("Welcome to Robots vs Dinosaurs");
+            Console.WriteLine("Click Enter to Run Game");
+            Console.ReadLine();
+            SelectRobot();   
 
+        }
 
-
-
+        public void robotShowStats()
+        {
+            //Console.Write("Current Stats");
+            //Console.WriteLine(
+            //Console.WriteLine(fleet.ListOfRobots[].robotHealth));
+            //Console.WriteLine("Press any key to continue");
+            //Console.ReadLine();
+        }
 
     }
-    //Console.WriteLine("Please select a Dinosaur");
-    //Console.WriteLine("1) T-Rex, 2) Spinosaurus, 3) Triceratops");
-    //Console.ReadLine();
 
 }

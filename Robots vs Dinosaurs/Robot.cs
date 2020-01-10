@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Robots_vs_Dinosaurs
 {
-    class Robot
+    public class Robot
     {
         //member variable
         public string robotName;
@@ -27,13 +27,20 @@ namespace Robots_vs_Dinosaurs
         //public double robotAttack()
         public double RobotAttack()
         {
+            double result;
             double randomizedNumber;
             Random random = new Random();
             randomizedNumber = random.Next(0, 6);
-
-            return randomizedNumber * robotPowerLevel * Convert.ToDouble(weapon);
+            result = randomizedNumber * robotPowerLevel * weapon.attackPower;
+            Console.WriteLine("You have caused " + result + " HP damage.");
+            return result;
         }
 
+        //public double robotShowHealth()
+        //{
+            
+        //    Console.WriteLine("This is the current health of "  )
+        //}
 
     }
 }

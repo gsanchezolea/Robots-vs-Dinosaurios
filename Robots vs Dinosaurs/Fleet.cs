@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Robots_vs_Dinosaurs
 {
-    class Fleet
+    public class Fleet
     {
         //member variable
-        List<Robot> listOfRobots = new List<Robot>();
-
+        //Instatiated List
+        public List<Robot> ListOfRobots = new List<Robot>();
+        
 
 
         //constructor
@@ -24,15 +25,15 @@ namespace Robots_vs_Dinosaurs
 
             //Instatiated Objects
             //
-            Robot robotOne = new Robot("C3P0", 75, 65, atomBlaster);
-            Robot robotTwo = new Robot("R2D2", 80, 75, weaponZapper);
-            Robot robotThree = new Robot("T-1000", 80, 75, liquidKnife);
+            Robot robotOne = new Robot("C3P0", 10000, 65, atomBlaster);
+            Robot robotTwo = new Robot("R2D2", 10000, 75, weaponZapper);
+            Robot robotThree = new Robot("T-1000", 10000, 75, liquidKnife);
 
             //Adding Objects to List
 
-            listOfRobots.Add(robotOne);
-            listOfRobots.Add(robotTwo);
-            listOfRobots.Add(robotThree);
+            ListOfRobots.Add(robotOne);
+            ListOfRobots.Add(robotTwo);
+            ListOfRobots.Add(robotThree);
 
 
 

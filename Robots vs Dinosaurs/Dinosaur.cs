@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Robots_vs_Dinosaurs
 {
-    class Dinosaur
+    public class Dinosaur
     {
         //member variable
-        public string dinorType; //types of dinosaurs include the following: Tyrannosaurus, Allosaurus, Triceratops, Stegosaurus, & Ankylosaurus
+        public string dinoType; //types of dinosaurs include the following: Tyrannosaurus, Allosaurus, Triceratops, Stegosaurus, & Ankylosaurus
         public double dinoHealth;
         public double dinoEnergy;
         public double dinoAttackPower;
@@ -21,7 +21,7 @@ namespace Robots_vs_Dinosaurs
         //constructor
         public Dinosaur(string newDinoType, double newHealth, double newEnergy, double newAttackPower)
         {
-            dinorType = newDinoType;
+            dinoType = newDinoType;
             dinoHealth = newHealth;
             dinoEnergy = newEnergy;
             dinoAttackPower = newAttackPower;
@@ -31,18 +31,16 @@ namespace Robots_vs_Dinosaurs
         //member method        
         public double DinoAttack()
         {
+            double result;
             double randomizedNumber;
             Random random = new Random();
             randomizedNumber = random.Next(0, 6);
-
-            return randomizedNumber * dinoEnergy * dinoAttackPower;
+            result = randomizedNumber * dinoEnergy * dinoAttackPower;
+            Console.WriteLine("You have caused " + result + " HP damage.");
+            return result;
         }
 
-        //public double HealthLoss()
-        //{
-        //    double result;
-            
-        //}
+       
         
     }
 }
