@@ -8,30 +8,41 @@ namespace Robots_vs_Dinosaurs
 {
     public class Herd
     {
-        //member variable
-        //Instatiated List
-        public List<Dinosaur> ListOfDinosaurs = new List<Dinosaur>();         
-        
+        //Member Variable      
+        public List<Dinosaur> ListOfDinosaurs = new List<Dinosaur>();
 
-        //constructor
+        public bool HerdAlive;
+        
+        //Constructor
         public Herd()
         {
-            //Instatiated Objects
-            //Data Type - Object - Constructor - (Dino Type, Max Val 100, Max Value 100, Max Val 10
-            Dinosaur dinoOne = new Dinosaur("T-Rex", 10000, 90, 10);
-            Dinosaur dinoTwo = new Dinosaur("Spinosaurus", 10000, 95, 8);
-            Dinosaur dinoThree = new Dinosaur("Triceratops", 10000, 75, 7);
-
-            //Adding Objects to List 
+            HerdAlive = true;
+            
+            Dinosaur dinoOne = new Dinosaur("T-Rex", 1000, 50, 40);
+            Dinosaur dinoTwo = new Dinosaur("Spinosaurus", 1000, 50, 40);
+            Dinosaur dinoThree = new Dinosaur("Triceratops", 1000, 50, 40);
+            
             ListOfDinosaurs.Add(dinoOne);
             ListOfDinosaurs.Add(dinoTwo);
-            ListOfDinosaurs.Add(dinoThree);
-
-            
+            ListOfDinosaurs.Add(dinoThree);            
         }
-
-
-
-        //member method
+        //Member Method
+        public bool HerdLifeStatus()
+        {
+            if (ListOfDinosaurs[0].dinosaurAlive || ListOfDinosaurs[1].dinosaurAlive || ListOfDinosaurs[2].dinosaurAlive)
+            {
+                bool result;
+                HerdAlive = true;
+                result = HerdAlive;
+                return result;
+            }
+            else
+            {
+                bool result;
+                HerdAlive = false;
+                result = HerdAlive;
+                return result;
+            }
+        }      
     }
 }

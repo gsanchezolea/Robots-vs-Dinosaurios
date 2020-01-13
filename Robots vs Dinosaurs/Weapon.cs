@@ -8,14 +8,14 @@ namespace Robots_vs_Dinosaurs
 {
     public class Weapon
     {
-        //member variables
+        //Member Variables
         public string weaponType;
         public double attackPower;
 
    
 
 
-        //constructor
+        //Constructor
         public Weapon(string newWeapon, double newAttackPower)
         {
             weaponType = newWeapon;
@@ -23,5 +23,6 @@ namespace Robots_vs_Dinosaurs
 
             
         }
+        //Member Methods
     }
 }

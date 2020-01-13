@@ -11,7 +11,7 @@ namespace Robots_vs_Dinosaurs
         static void Main(string[] args) ////DO NOT DELETE!!
         {
             Battlefield battlefield = new Battlefield();
-            battlefield.RunGame();
+            battlefield.MainMenu();
 
            
 

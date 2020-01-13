@@ -8,39 +8,41 @@ namespace Robots_vs_Dinosaurs
 {
     public class Robot
     {
-        //member variable
+        //Member Variable
         public string robotName;
         public double robotHealth;
         public double robotPowerLevel;
-        public Weapon weapon;      
+        public Weapon weapon;
+        public bool robotAlive;
 
-        //constructor
+        //Constructor
         public Robot(string newName, double newHealth, double newPowerLevel, Weapon newWeapon)
         {
             robotName = newName;
             robotHealth = newHealth;
             robotPowerLevel = newPowerLevel;
             weapon = newWeapon;
+            robotAlive = true;
         }
-        //member method
 
-        //public double robotAttack()
+        //Member Method        
         public double RobotAttack()
         {
             double result;
             double randomizedNumber;
+
             Random random = new Random();
             randomizedNumber = random.Next(0, 6);
             result = randomizedNumber * robotPowerLevel * weapon.attackPower;
-            Console.WriteLine("You have caused " + result + " HP damage.");
+            if (randomizedNumber == 0)
+            {
+                Console.WriteLine("Missed!");
+            }
+            else
+            {
+                Console.WriteLine("You have caused " + result + " HP damage.");                
+            }
             return result;
-        }
-
-        //public double robotShowHealth()
-        //{
-            
-        //    Console.WriteLine("This is the current health of "  )
-        //}
-
+        }        
     }
 }

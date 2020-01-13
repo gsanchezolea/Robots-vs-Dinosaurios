@@ -8,40 +8,46 @@ namespace Robots_vs_Dinosaurs
 {
     public class Fleet
     {
-        //member variable
-        //Instatiated List
+        //Member Variable        
         public List<Robot> ListOfRobots = new List<Robot>();
-        
 
+        public bool FleetAlive;
 
-        //constructor
+        //Constructor
         public Fleet()
         {
-            // Weapon Instantiation
+            FleetAlive = true;
 
-            Weapon weaponZapper = new Weapon("Tazer", 20);
-            Weapon atomBlaster = new Weapon("Plasma Gun", 20);
-            Weapon liquidKnife = new Weapon("Knife", 20);
+            Weapon weaponZapper = new Weapon("Tazer", 40);
+            Weapon atomBlaster = new Weapon("Plasma Gun", 40);
+            Weapon liquidKnife = new Weapon("Knife", 40);
 
-            //Instatiated Objects
-            //
-            Robot robotOne = new Robot("C3P0", 10000, 65, atomBlaster);
-            Robot robotTwo = new Robot("R2D2", 10000, 75, weaponZapper);
-            Robot robotThree = new Robot("T-1000", 10000, 75, liquidKnife);
-
-            //Adding Objects to List
+            Robot robotOne = new Robot("C-3PO", 1000, 50, atomBlaster);
+            Robot robotTwo = new Robot("R2-D2", 1000, 50, weaponZapper);
+            Robot robotThree = new Robot("T-1000", 1000, 50, liquidKnife);
 
             ListOfRobots.Add(robotOne);
             ListOfRobots.Add(robotTwo);
             ListOfRobots.Add(robotThree);
-
-
-
         }
-        
 
-
-
-        //member method
+        //Member Method
+        public bool FleetLifeStatus()
+        {
+            if (ListOfRobots[0].robotAlive || ListOfRobots[1].robotAlive || ListOfRobots[2].robotAlive)
+            {
+                bool result;
+                FleetAlive = true;
+                result = FleetAlive;
+                return result;
+            }
+            else
+            {
+                bool result;
+                FleetAlive = false;
+                result = FleetAlive;
+                return result;
+            }
+        }      
     }
 }
